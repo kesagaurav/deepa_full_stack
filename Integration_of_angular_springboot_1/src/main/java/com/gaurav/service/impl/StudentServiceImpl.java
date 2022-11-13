@@ -1,0 +1,58 @@
+package com.gaurav.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.gaurav.model.Student;
+import com.gaurav.repository.StudentRepository;
+import com.gaurav.service.StudentService;
+
+@Service
+public class StudentServiceImpl implements StudentService {
+		@Autowired
+		private StudentRepository repository;
+		private static List<Student> list=new ArrayList<>();
+	
+	@Override
+	public Student addStudent(Student student) {
+		// TODO Auto-generated method stub
+		return repository.save(student);
+	}
+
+	@Override
+	public Student updateStudent(Student student) {
+		/*
+		 * list=list.stream().map(e->{ if(e.getId()==id) { e.setName(student.getName());
+		 * e.setLocation(student.getLocation()); e.setCity(student.getCity());
+		 * e.setSalarly(student.getSalarly()); } return e;
+		 * 
+		 * }).collect(Collectors.toList());
+		 */
+		return repository.save(student);
+		
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		repository.deleteById(id);
+		
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
+	}
+
+	@Override
+	public Student getStduentByid(int id) {
+		
+		return repository.findById(id).get();
+	}
+
+}

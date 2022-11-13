@@ -1,0 +1,32 @@
+
+
+<div class="container-fludid">
+    
+    <table class=" table table-light">
+        <thead class="thead-light">
+            <th>Name</th>
+            <th>Location</th>
+            <th>city</th>
+            <th>salarly</th>
+            <th>Delete</th>
+            <th>update</th>
+        </thead>
+
+   
+        <tr *ngFor="let student of students">
+            <td>{{student.name}}</td>
+            <td>{{student.location}}</td>
+            <td>{{student.city}}</td>
+            <td>{{student.salarly}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteStudent(student.id)">delete</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="saveStudent(student.id)">update</button></td>
+
+
+        </tr>
+    
+    
+    
+
+
+</table>
+</div>

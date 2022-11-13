@@ -1,0 +1,40 @@
+package com.gaurav.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gaurav.model.Student;
+import com.gaurav.service.StudentService;
+
+@RestController
+public class StudentController implements StudentService{
+		@Autowired
+		private StudentService service;
+	
+	@Override
+	public Student addStudent(Student student) {
+		// TODO Auto-generated method stub
+		return service.addStudent(student);
+	}
+
+	@Override
+	public Student updateStudent(Student student) {
+		// TODO Auto-generated method stub
+		return service.updateStudent(student);
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
